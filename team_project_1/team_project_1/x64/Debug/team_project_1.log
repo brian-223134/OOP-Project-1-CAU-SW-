@@ -1,0 +1,10 @@
+﻿  StudentManageMain.cpp
+C:\Users\cjkim\OneDrive\바탕 화면\중앙대학교\2학년\2학기\객체지향프로그래밍\Project 1\team_project_1\team_project_1\StudentManageMain.cpp(10,30): error C2065: 'Student': 선언되지 않은 식별자입니다.
+C:\Users\cjkim\OneDrive\바탕 화면\중앙대학교\2학년\2학기\객체지향프로그래밍\Project 1\team_project_1\team_project_1\StudentManageMain.cpp(10,23): error C2923: 'std::vector': 'Student'은(는) '_Ty' 매개 변수에 대한 올바른 템플릿 형식 인수가 아닙니다.
+      C:\Users\cjkim\OneDrive\바탕 화면\중앙대학교\2학년\2학기\객체지향프로그래밍\Project 1\team_project_1\team_project_1\StudentManageMain.cpp(10,30):
+      'Student' 선언을 참조하십시오.
+  
+C:\Users\cjkim\OneDrive\바탕 화면\중앙대학교\2학년\2학기\객체지향프로그래밍\Project 1\team_project_1\team_project_1\StudentManageMain.cpp(10,23): error C2976: 'std::vector': 템플릿 인수가 너무 적습니다.
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\include\vector(429,7):
+      'std::vector' 선언을 참조하십시오.
+  
