@@ -306,6 +306,7 @@ void Student_DB::search_student_data(int select_option) //search and print
 
 	string keyword; //Search keyword
 	string addmission_year; //학번 앞 4자리
+	string last_name; //초성 검색용 string
 
 	//============= select process =============
 	switch (select_option)
@@ -363,7 +364,29 @@ void Student_DB::search_student_data(int select_option) //search and print
 		}
 		break;
 
-	case 6: //idea :: List All : select all == students
+	case 6:
+		cout << "Last name ? ";
+		cin >> keyword;
+		for (auto& s : students)
+		{
+			last_name = (s.get_student_name()).substr(0, keyword.length());
+			if (last_name.compare(keyword) == 0)
+				_selected.push_back(s);
+		}
+		break;
+
+	case 7:
+		cout << "Substring keyword ? ";
+		cin.ignore();
+		getline(cin, keyword);
+		for (auto& s : students)
+		{
+			if (s.get_student_name().find(keyword) != string::npos)
+				_selected.push_back(s);
+		}
+		break;
+
+	case 8: //idea :: List All : select all == students
 		_selected = students;
 		break;
 
@@ -428,7 +451,9 @@ void display_search_option()
 	cout << "3. Search by admission year\n";
 	cout << "4. Search by birth year\n";
 	cout << "5. Search by department name\n";
-	cout << "6. List All\n\n";
+	cout << "6. Search by Last name\n";
+	cout << "7. Search by Substring\n";
+	cout << "8. List All\n\n";
 	cout << "> ";
 }
 
