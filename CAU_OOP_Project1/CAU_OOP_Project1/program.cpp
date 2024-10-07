@@ -14,7 +14,7 @@ private:
 	string student_id; //학생 ID
 	string birth_year; //학생 탄생년도
 	string department; //학생이 속한 학부
-	string tel;
+	string tel; //학생의 연락처
 
 public:
 	//============= Constructor =============
@@ -63,7 +63,7 @@ public:
 	}
 	void sort_student_data(int sort_option);
 	void show_all_data()
-	{
+	{ 
 		cout << setw(15) << left << "Student Name" << " " << setw(10) << "StudentID"
 			<< " " << setw(25) << left << "Department" " " << setw(10)
 			<< "Birth year" << "  " << setw(12) << "Tel" << endl;
@@ -85,7 +85,6 @@ public:
 void file_tracker(const string& f_name);
 Student get_input_student();
 
-
 // 선택 옵션을 보여주는 menu 함수들
 void display_menu();
 void display_search_option();
@@ -95,7 +94,7 @@ int main(void)
 {
 	const string f_name = "file1.txt"; //txt 파일의 이름이 file1였으므로 파일명을 고정한다.
 	ifstream file("file1.txt");
-
+	
 	Student_DB students_db; //students를 DB 객체로 불러왔기 때문에 객체 속의 Vector가 생성
 
 	streampos begin, end; //이전에 작성된 txt 파일 속 내용의 유무를 판단하기 위한 척도 변수
@@ -195,6 +194,7 @@ Student get_input_student()
 	string temp_department;
 	string temp_tel;
 
+	//띄어쓰기가 포함된 문자열을 받을 때 getline
 	cin.ignore();
 	cout << "Name ? ";
 	getline(cin, temp_name);
@@ -375,7 +375,7 @@ void Student_DB::search_student_data(int select_option) //search and print
 		}
 		break;
 
-	case 7:
+	case 7: 
 		cout << "Substring keyword ? ";
 		cin.ignore();
 		getline(cin, keyword);
