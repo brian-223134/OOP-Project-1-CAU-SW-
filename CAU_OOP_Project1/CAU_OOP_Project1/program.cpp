@@ -226,7 +226,7 @@ void Student_DB::add_student_data(Student& temp_student) {
 	for (auto& exist : students) { //students vector 내를 for문을 돌면서 id가 같은지 보는 과정
 		if (exist.get_id() == temp_student.get_id())
 		{
-			cout << "Error: already inserted\n";
+			cout << "Error : Already inserted\n\n";
 			return;
 		}
 	}
@@ -312,7 +312,7 @@ void Student_DB::search_student_data(int select_option) //search and print
 	switch (select_option)
 	{
 	case 1: //Search by name
-		cout << "Name keyword ? "; //get key word
+		cout << "Name keyword? "; //get key word
 		cin.ignore();
 		getline(cin, keyword); //이름은 space가 존재하므로 getline으로 받는다.
 		for (auto& s : students) //check each student and select (same with under code)
@@ -323,7 +323,7 @@ void Student_DB::search_student_data(int select_option) //search and print
 		break;
 
 	case 2: //Search by Student ID
-		cout << "Student ID keyword ? ";
+		cout << "Student ID keyword? ";
 		cin >> keyword;
 		for (auto& s : students)
 		{
@@ -333,7 +333,7 @@ void Student_DB::search_student_data(int select_option) //search and print
 		break;
 
 	case 3: //Search by Addmission year
-		cout << "Addmission year keyword ? ";
+		cout << "Addmission year keyword? ";
 		cin >> keyword;
 		for (auto& s : students)
 		{
@@ -344,7 +344,7 @@ void Student_DB::search_student_data(int select_option) //search and print
 		break;
 
 	case 4: //Search by birth year
-		cout << "birh year keyword ? ";
+		cout << "birh year keyword? ";
 		cin >> keyword;
 		for (auto& s : students)
 		{
@@ -354,7 +354,7 @@ void Student_DB::search_student_data(int select_option) //search and print
 		break;
 
 	case 5: //Search by Department name
-		cout << "Department name keyword ? ";
+		cout << "Department name keyword? ";
 		cin.ignore();
 		getline(cin, keyword); //department도 space를 허용하기에 getline으로 받는다.
 		for (auto& s : students)
@@ -365,7 +365,7 @@ void Student_DB::search_student_data(int select_option) //search and print
 		break;
 
 	case 6:
-		cout << "Last name ? ";
+		cout << "Last name? ";
 		cin >> keyword;
 		for (auto& s : students)
 		{
@@ -376,7 +376,7 @@ void Student_DB::search_student_data(int select_option) //search and print
 		break;
 
 	case 7: 
-		cout << "Substring keyword ? ";
+		cout << "Substring keyword? ";
 		cin.ignore();
 		getline(cin, keyword);
 		for (auto& s : students)
@@ -441,15 +441,16 @@ void display_menu()
 	cout << "2. Search\n";
 	cout << "3. Sorting Option\n";
 	cout << "4. Exit\n";
-	cout << "> ";
+	cout << ">_ ";
 }
 
 void display_search_option()
 {
+	cout << "\n- Search -\n";
 	cout << "1. Search by name\n";
-	cout << "2. Search by student ID\n";
-	cout << "3. Search by admission year\n";
-	cout << "4. Search by birth year\n";
+	cout << "2. Search by student ID (10 digits)\n";
+	cout << "3. Search by admission year (4 digits)\n";
+	cout << "4. Search by birth year (4 digits)\n";
 	cout << "5. Search by department name\n";
 	cout << "6. Search by Last name\n";
 	cout << "7. Search by Substring\n";
@@ -459,10 +460,10 @@ void display_search_option()
 
 void display_sorting_option()
 {
-	cout << "- Sorting Option\n";
+	cout << "\n- Sorting Option\n";
 	cout << "1. Sort by Name\n";
 	cout << "2. Sort by Student ID\n";
 	cout << "3. Sort by Birth Year\n";
-	cout << "4. Sort by Department\n";
+	cout << "4. Sort by Department name\n";
 	cout << "> ";
 }
