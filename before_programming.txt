@@ -1,6 +1,0 @@
-Student 객체 설계 방안
-1. Name: string (15 char under)
-2. ID (int, 10 digit)
-3. Birth Year (int, 4 digit)
-4. Department (String which can contain Space character)
-5. Tel (int, 12 digit)

@@ -90,10 +90,18 @@ void display_menu();
 void display_search_option();
 void display_sorting_option();
 
-int main(void)
+int main(int argc, char* argv[])
 {
-	const string f_name = "file1.txt"; //txt 파일의 이름이 file1였으므로 파일명을 고정한다.
-	ifstream file("file1.txt");
+	if (argc < 2) {  // 인자가 충분하지 않은 경우 처리
+		cout << "File directory : " << argv[0] << " <filename>" << endl;
+		return 1;
+	}
+
+	const string f_name = argv[1]; //두번째 인자를 txt 파일 이름으로 받는다.
+	ifstream file(f_name);
+
+	//const string f_name = "file1.txt";
+	//ifstream file("file1.txt"); ->위의 두 코드는 파일 인자를 받기 전의 file 처리 방식을 표시한것이다.
 	
 	Student_DB students_db; //students를 DB 객체로 불러왔기 때문에 객체 속의 Vector가 생성
 
@@ -286,8 +294,8 @@ void Student_DB::sort_student_data(int sort_option) //now not be used
 
 void Student_DB::show_selected_data() //- for Student_DB::search_student_data()
 {
-	cout << setw(15) << left << "Student Name" << " " << setw(10) << "StudentID"
-		<< " " << setw(25) << left << "Department" " " << setw(10)
+	cout << setw(15) << left << "Name" << " " << setw(10) << "StudentID"
+		<< " " << setw(25) << left << "Dept" " " << setw(10)
 		<< "Birth year" << "  " << setw(12) << "Tel" << endl;
 	for (auto& s : _selected)
 	{
