@@ -340,8 +340,8 @@ void Student_DB::search_student_data(int select_option) //search and print
 		}
 		break;
 
-	case 3: //Search by Addmission year
-		cout << "Addmission year keyword? ";
+	case 3: //Search by Admission year
+		cout << "Admission year keyword? ";
 		cin >> keyword;
 		for (auto& s : students)
 		{
@@ -460,8 +460,8 @@ void display_search_option()
 	cout << "3. Search by admission year (4 digits)\n";
 	cout << "4. Search by birth year (4 digits)\n";
 	cout << "5. Search by department name\n";
-	cout << "6. Search by Last name\n";
-	cout << "7. Search by Substring\n";
+	cout << "6. Search by last name\n";
+	cout << "7. Search by substring\n";
 	cout << "8. List All\n\n";
 	cout << "> ";
 }
