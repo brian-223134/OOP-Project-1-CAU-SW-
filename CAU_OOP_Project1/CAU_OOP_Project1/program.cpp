@@ -352,7 +352,7 @@ void Student_DB::search_student_data(int select_option) //search and print
 		break;
 
 	case 4: //Search by birth year
-		cout << "birh year keyword? ";
+		cout << "birth year keyword? ";
 		cin >> keyword;
 		for (auto& s : students)
 		{
